@@ -6,7 +6,7 @@ Git enables:
 	- collaborations
 
 Git process:
-	On a local workstation: Modify files in a working directory, which are then staged, and then committed to the local repository. Each snapshot is assigned a unique hexadecimal; these unique ids are useful when multiple collaborators are working on the same project. Local modifications can be pushed or cloned/pulled/fetched/merged to/from a remote repository (e.g. github)
+	On a local workstation: Modify files in a working directory, which are then staged, and then committed to the local repository. Each snapshot is assigned a unique hexadecimal (aka the git sha); these unique ids are useful when multiple collaborators are working on the same project. Local modifications can be pushed or cloned/pulled/fetched/merged to/from a remote repository (e.g. github)
 
 'git init'	: initialize a folder with git. Creates a '.git' folder that holds everything (data/backups; you don’t touch this)
 
@@ -25,14 +25,15 @@ Git process:
 'git checkout -- [file]': completely revert a change (e.g. you accidentally deleted a file and want to 'checkout' the file from a previous version). This overwrites any local changes on the file since the last commit. 
 
 'git log'	:show the log of changes
+'git log -2 --pretty=oneline': A variation on the format of the log output. -2 says only give me the last two. 
 
-'git diff 2922 18e6'	:compare stages whose checksum that start with 2922, and 18e6
-
+'git diff 2922 18e6'	:compare stages whose checksum that start with 2922, and 18e6. It does 18e6 - 2922 (ie. the second stage is assumed to be the most recent)
 'git diff HEAD~1 HEAD'	:compare previous stage (HEAD~1) with current stage (HEAD)
 
 'git commit --amend'	:opens up emacs to allow modification of previous commit message
 
-'git revert -n [checksum]': undoes the change specified by the commit [checksum]. This makes the changes in the staging area, which then can be committed. 
+'git revert [checksum]': undoes the change specified by the commit [checksum]. This makes the changes in the staging area, which then can be committed. It will ask you to provide a message (in vim) associated with the reversion. It will pre-populate the commit message. 
+'git revert -n [checksum]': instead of completely reverting, it only moves it back to the staging area. 
 
 '.gitignore'	: file containing list of files not to commit [things to ignore: (1) private info, (2) junk files, (3) generated files (e.g. pdf), (4) binary files (maybe, e.g. .doc), (5) large files]
 
