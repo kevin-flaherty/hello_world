@@ -34,11 +34,15 @@ Git process:
 
 'git revert [checksum]': undoes the change specified by the commit [checksum]. This makes the changes in the staging area, which then can be committed. It will ask you to provide a message (in vim) associated with the reversion. It will pre-populate the commit message. 
 'git revert -n [checksum]': instead of completely reverting, it only moves it back to the staging area. 
+'git revert --abort': abort a revert back to the staged level.
+
+'git tag -a [name] -m "[message]" ': Add a specific tag to the most recent snapshot, which will make it easier to find this commit later.
+'git tag': list the tags for the git repository
 
 '.gitignore'	: file containing list of files not to commit [things to ignore: (1) private info, (2) junk files, (3) generated files (e.g. pdf), (4) binary files (maybe, e.g. .doc), (5) large files]
 
 'git remote add origin [url]':  link a repository on a local machine onto github
-'git push origin master':	push changes onto remote repository
+'git push -u origin master':	push changes onto remote repository
 'git push'		: after first long 'git push' command, this shortcut can be used
 
 'git clone [url]'	: downloads the repository from github and puts it into a project directory with the same name as the online repository (you can give it a directory name after the url)
