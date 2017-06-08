@@ -33,7 +33,7 @@ Git process:
 'git commit --amend'	:opens up emacs to allow modification of previous commit message
 
 'git revert [checksum]': undoes the change specified by the commit [checksum]. This makes the changes in the staging area, which then can be committed. It will ask you to provide a message (in vim) associated with the reversion. It will pre-populate the commit message. 
-'git revert -n [checksum]': instead of completely reverting, it only moves it back to the staging area. 
+'git revert -n [checksum]': instead of completely reverting, it only moves it back to the staging area. The local files change, but the changes haven't been comitted.
 'git revert --abort': abort a revert back to the staged level.
 
 'git tag -a [name] -m "[message]" ': Add a specific tag to the most recent snapshot, which will make it easier to find this commit later.
