@@ -16,13 +16,13 @@ Git process:
 
 'git add .'	: add all files from the current directory
 
-'git commit'	: initially opens text editor so a comment can be added
+'git commit'	: initially opens text editor so a comment can be added. Uses the default text editor, which can be vim (use ':q!' to exit vim, use ':wq' to save the commit message)
 
-‘git commit -m [message]’    :save snapshot to local repository, and add a message at the same time (rather than opening vi to edit the message)
+‘git commit -m "[message]" ’    :save snapshot to local repository, and add a message at the same time (rather than opening vi to edit the message)
 
-'git reset HEAD [file]': unstages a change
+'git reset HEAD [file]': unstages a change, but does not change the local version of the file. 
 
-'git checkout -- [file]': completely revert a change (e.g. you accidentally deleted a file and want to 'checkout' the file from a previous version)
+'git checkout -- [file]': completely revert a change (e.g. you accidentally deleted a file and want to 'checkout' the file from a previous version). This overwrites any local changes on the file since the last commit. 
 
 'git log'	:show the log of changes
 
